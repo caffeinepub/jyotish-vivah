@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Astrology app for matchmaking and daily planetary updates in Marathi language",
+  "architectural_notes": [
+    "Primary language: Marathi for all UI and content",
+    "Target users: Professional astrologers"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-matchmaking-feature-where-astrologers-can-input-birth-details-date-time-place-for-two-individuals-and-calculate-compatibility-scores-based-on-astrological-principles-guna-milan-kundali-matching",
+      "title": "Create a matchmaking feature where astrologers can input birth details (date, time, place) for two individuals and calculate compatibility scores based on astrological principles (Guna Milan / Kundali matching)",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-daily-planetary-positions-dashboard-showing-current-positions-of-all-major-planets-sun-moon-mars-mercury-jupiter-venus-saturn-rahu-ketu-with-their-zodiac-signs-degrees-and-relevant-astrological-data",
+      "title": "Create a daily planetary positions dashboard showing current positions of all major planets (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu) with their zodiac signs, degrees, and relevant astrological data",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-complete-marathi-language-interface-throughout-the-entire-application-including-all-ui-labels-buttons-form-fields-navigation-and-content",
+      "title": "Implement complete Marathi language interface throughout the entire application including all UI labels, buttons, form fields, navigation, and content",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-cohesive-visual-theme-inspired-by-traditional-indian-astrology-aesthetics-with-warm-earth-tones-saffron-deep-gold-terracotta-elegant-serif-or-traditional-devanagari-typography-and-celestial-motifs-that-convey-trust-and-spiritual-depth-suitable-for-an-astrology-application",
+      "title": "Design a cohesive visual theme inspired by traditional Indian astrology aesthetics with warm earth tones (saffron, deep gold, terracotta), elegant serif or traditional Devanagari typography, and celestial motifs that convey trust and spiritual depth suitable for an astrology application",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-marathi-translations-for-all-panchang-related-terms-including-tithi-names-etc-nakshatra-names-etc-yoga-names-and-karana-names",
+      "title": "Add Marathi translations for all panchang-related terms including Tithi names (प्रतिपदा, द्वितीया, etc.), Nakshatra names (अश्विनी, भरणी, etc.), Yoga names, and Karana names",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-panchangcard-component-that-displays-daily-panchang-information-in-a-visually-organized-card-format-with-sections-for-tithi-nakshatra-yoga-karana-and-astronomical-timings-styled-consistently-with-the-existing-traditional-indian-astrology-theme",
+      "title": "Create a PanchangCard component that displays daily panchang information in a visually organized card format with sections for Tithi, Nakshatra, Yoga, Karana, and astronomical timings, styled consistently with the existing traditional Indian astrology theme",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-panchang-page-route-accessible-from-the-main-navigation-that-displays-the-latest-panchang-information-using-the-panchangcard-component-with-loading-and-error-states",
+      "title": "Add a new Panchang page route accessible from the main navigation that displays the latest panchang information using the PanchangCard component, with loading and error states",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-react-query-hooks-for-fetching-panchang-data-that-integrate-with-the-backend-actor-following-the-existing-pattern-in-usequeries-ts",
+      "title": "Create React Query hooks for fetching panchang data that integrate with the backend actor, following the existing pattern in useQueries.ts",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Wedding matchmaking functionality for astrologer",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Daily planetary position updates display",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Marathi language interface and content",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Display latest panchang information",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create a backend function to calculate and return panchang data for a given date including Tithi (lunar day), Nakshatra (constellation), Yoga, Karana, sunrise time, sunset time, moonrise time, and moonset time",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Jyotish Vivah",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

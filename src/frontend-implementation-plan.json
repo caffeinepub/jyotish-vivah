@@ -1,0 +1,92 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add latest panchang information display",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "summary": "Add Marathi translations for all panchang-related terms including Tithi, Nakshatra, Yoga, and Karana names",
+      "acceptanceCriteria": [
+        "All panchang terminology is translated to Marathi following the existing marathi.ts structure",
+        "Translation utilities handle panchang term conversion similar to existing planet and zodiac translations"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/i18n/marathi.ts",
+          "operation": "modify",
+          "description": "Add Marathi translations for panchang section including navigation label 'पंचांग', and translations for all Tithi names (प्रतिपदा, द्वितीया, तृतीया, चतुर्थी, पंचमी, षष्ठी, सप्तमी, अष्टमी, नवमी, दशमी, एकादशी, द्वादशी, त्रयोदशी, चतुर्दशी, पूर्णिमा/अमावस्या), all 27 Nakshatra names (अश्विनी, भरणी, कृत्तिका, रोहिणी, मृगशीर्ष, आर्द्रा, पुनर्वसू, पुष्य, आश्लेषा, मघा, पूर्वा फाल्गुनी, उत्तरा फाल्गुनी, हस्त, चित्रा, स्वाती, विशाखा, अनुराधा, ज्येष्ठा, मूल, पूर्वाषाढा, उत्तराषाढा, श्रवण, धनिष्ठा, शतभिषा, पूर्वाभाद्रपद, उत्तराभाद्रपद, रेवती), all 27 Yoga names, all 11 Karana names, and labels for astronomical timings (सूर्योदय, सूर्यास्त, चंद्रोदय, चंद्रास्त)"
+        },
+        {
+          "path": "frontend/src/utils/marathiTranslations.ts",
+          "operation": "modify",
+          "description": "Add utility functions translateTithi, translateNakshatra, translateYoga, and translateKarana that convert English panchang term names to Marathi using predefined dictionaries, following the same pattern as existing translatePlanet and translateZodiacSign functions"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create a PanchangCard component that displays daily panchang information in a visually organized card format with sections for Tithi, Nakshatra, Yoga, Karana, and astronomical timings",
+      "acceptanceCriteria": [
+        "Component renders all panchang elements in an organized, readable layout",
+        "Styling matches existing PlanetCard component patterns using saffron, gold, and terracotta color scheme",
+        "Component displays information in Marathi using translated terms",
+        "Card includes appropriate iconography for different panchang elements"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PanchangCard.tsx",
+          "operation": "create",
+          "description": "Create new component that accepts PanchangDay data from backend interface and displays it in a card layout with sections for Tithi (with moon icon), Nakshatra (with star icon), Yoga, Karana, and astronomical timings (सूर्योदय, सूर्यास्त, चंद्रोदय, चंद्रास्त). Use Marathi translations from utility functions for all panchang terms. Style with Card component from shadcn/ui and match the visual theme of PlanetCard using saffron/gold/terracotta colors from the theme. Include section headers with appropriate icons and organize data in a grid or column layout for readability"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Add a new Panchang page route accessible from the main navigation that displays the latest panchang information using the PanchangCard component, with loading and error states",
+      "acceptanceCriteria": [
+        "New route /panchang is added to the router configuration in App.tsx",
+        "Navigation menu in Layout component includes link to Panchang page with Marathi label",
+        "Page fetches and displays current date panchang data with appropriate loading spinner",
+        "Error states are handled with user-friendly Marathi messages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/PanchangPage.tsx",
+          "operation": "create",
+          "description": "Create new page component that fetches current panchang data using the usePanchangData hook, displays loading state with Spinner component during data fetch, shows error messages in Marathi if fetch fails, and renders PanchangCard component with the fetched panchang data when available. Include page header with Marathi title 'आजचे पंचांग' and follow the layout pattern used in PlanetaryDashboard.tsx"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add new route configuration for /panchang path that renders PanchangPage component, following the existing router setup pattern for planetary dashboard and matchmaking routes"
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Add navigation link to Panchang page in both desktop and mobile navigation menus using the Marathi label 'पंचांग' from the marathi.ts translations, positioned after the existing navigation items and following the same styling pattern"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Create React Query hooks for fetching panchang data that integrate with the backend actor, following the existing pattern in useQueries.ts",
+      "acceptanceCriteria": [
+        "Hook follows the established React Query pattern used for planetary and compatibility data",
+        "Query handles authentication state and actor availability",
+        "Hook provides loading, error, and data states for consumption by UI components"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useGetPanchangData query hook that accepts dayNumber parameter and calls actor.getPanchangData(dayNumber) to fetch PanchangDay data. Follow the existing React Query pattern with enabled condition checking for actor availability, staleTime of 5 minutes, and appropriate error handling. Return the query result with loading, error, and data states"
+        },
+        {
+          "path": "frontend/src/hooks/usePanchangData.ts",
+          "operation": "create",
+          "description": "Create custom hook that calculates today's day number (days since epoch or appropriate base date) and calls useGetPanchangData with that day number to fetch current panchang data. Follow the pattern used in usePlanetaryData.ts for simplicity and reusability"
+        }
+      ]
+    }
+  ]
+}

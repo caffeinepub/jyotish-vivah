@@ -1,0 +1,21 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup defining routes for planetary dashboard, matchmaking, and new panchang page, wrapped in Layout with ThemeProvider and Toaster.",
+  "frontend/src/components/Layout.tsx": "Main layout component with header navigation including new panchang link, hero banner, responsive mobile menu, and footer with quick links to all pages including panchang.",
+  "frontend/src/pages/PlanetaryDashboard.tsx": "Dashboard page displaying daily planetary positions for all nine planets with loading states, error handling, and formatted Marathi date display.",
+  "frontend/src/pages/MatchmakingPage.tsx": "Matchmaking page with tabbed interface for new compatibility calculations and history, featuring dual birth detail forms and results display.",
+  "frontend/src/components/PlanetCard.tsx": "Individual planet card component displaying planet name in Marathi, zodiac sign, degree position, and retrograde status with appropriate styling.",
+  "frontend/src/components/BirthDetailsForm.tsx": "Reusable form component for collecting birth details (name, date, time, place) with Marathi labels, validation, and error handling.",
+  "frontend/src/components/CompatibilityResults.tsx": "Component displaying compatibility calculation results with score, detailed Guna Milan breakdown, and favorable/unfavorable status indicators.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend operations including new useGetPanchangData hook that fetches panchang information with 5-minute stale time and proper actor availability checks.",
+  "frontend/src/hooks/useMatchmaking.ts": "Custom hook managing matchmaking functionality with save operations, recent history retrieval, and toast notifications in Marathi.",
+  "frontend/src/hooks/usePlanetaryData.ts": "Custom hook for fetching today's planetary report data with automatic date formatting.",
+  "frontend/src/utils/marathiTranslations.ts": "Translation utility functions providing mappings from English to Marathi for planets, zodiac signs, and all panchang elements (tithis, nakshatras, yogas, karanas) with dedicated translation functions for each category.",
+  "frontend/src/utils/validation.ts": "Form validation utilities with Marathi error messages for required fields and date validation.",
+  "frontend/src/i18n/marathi.ts": "Comprehensive Marathi language strings including new panchang section with translations for navigation, panchang elements (tithi, nakshatra, yoga, karana), astronomical timings, and error messages.",
+  "frontend/src/index.css": "Global styles with OKLCH color system defining traditional Indian astrology color palette (saffron, deep gold, terracotta) and Noto Sans Devanagari font for proper Marathi typography.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom astrology color palette, Devanagari font family, and elevated shadow utilities for spiritual aesthetic.",
+  "frontend/index.html": "HTML entry point with Marathi language attribute, meta description in Marathi, and Google Fonts preconnect for Devanagari typography.",
+  "frontend/src/components/PanchangCard.tsx": "Panchang display component that renders daily panchang information in a card layout with sections for tithi, nakshatra, yoga, karana, and astronomical timings, using Marathi translations and matching the app's saffron/gold/terracotta color scheme.",
+  "frontend/src/pages/PanchangPage.tsx": "Panchang page component that fetches and displays current panchang data with loading states, error handling, and Marathi labels, following the pattern established by PlanetaryDashboard.",
+  "frontend/src/hooks/usePanchangData.ts": "Custom hook that calculates today's day number from epoch and fetches current panchang data using useGetPanchangData, simplifying panchang data access for components."
+}

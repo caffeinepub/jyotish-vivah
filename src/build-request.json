@@ -1,0 +1,115 @@
+{
+  "kind": "build_request",
+  "title": "Add latest panchang information display",
+  "projectName": "Jyotish Saathi",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "text": "Create a backend function to calculate and return panchang data for a given date including Tithi (lunar day), Nakshatra (constellation), Yoga, Karana, sunrise time, sunset time, moonrise time, and moonset time",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add information off latest panchang in this app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes a query function that accepts a date parameter and returns complete panchang information",
+        "Panchang data includes all traditional elements: Tithi, Nakshatra, Yoga, Karana, and astronomical timings",
+        "Function returns data structure compatible with frontend display requirements"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add Marathi translations for all panchang-related terms including Tithi names (प्रतिपदा, द्वितीया, etc.), Nakshatra names (अश्विनी, भरणी, etc.), Yoga names, and Karana names",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add information off latest panchang in this app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All panchang terminology is translated to Marathi following the existing marathi.ts structure",
+        "Translation utilities handle panchang term conversion similar to existing planet and zodiac translations"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a PanchangCard component that displays daily panchang information in a visually organized card format with sections for Tithi, Nakshatra, Yoga, Karana, and astronomical timings, styled consistently with the existing traditional Indian astrology theme",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add information off latest panchang in this app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Component renders all panchang elements in an organized, readable layout",
+        "Styling matches existing PlanetCard component patterns using saffron, gold, and terracotta color scheme",
+        "Component displays information in Marathi using translated terms",
+        "Card includes appropriate iconography for different panchang elements"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add a new Panchang page route accessible from the main navigation that displays the latest panchang information using the PanchangCard component, with loading and error states",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add information off latest panchang in this app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "New route /panchang is added to the router configuration in App.tsx",
+        "Navigation menu in Layout component includes link to Panchang page with Marathi label",
+        "Page fetches and displays current date panchang data with appropriate loading spinner",
+        "Error states are handled with user-friendly Marathi messages"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Create React Query hooks for fetching panchang data that integrate with the backend actor, following the existing pattern in useQueries.ts",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add information off latest panchang in this app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hook follows the established React Query pattern used for planetary and compatibility data",
+        "Query handles authentication state and actor availability",
+        "Hook provides loading, error, and data states for consumption by UI components"
+      ]
+    }
+  ],
+  "constraints": [
+    "Maintain consistency with existing Marathi language interface throughout the application",
+    "Follow the established traditional Indian astrology visual theme with saffron, deep gold, and terracotta colors",
+    "Use the single-actor architecture pattern for all backend logic in main.mo",
+    "Do not modify immutable frontend paths including hooks/useInternetIdentity.ts, hooks/useActor.ts, main.tsx, and components/ui"
+  ],
+  "nonGoals": [
+    "Historical panchang data lookup for past dates",
+    "Panchang predictions or interpretations beyond displaying current information",
+    "User-specific panchang customization or saved preferences",
+    "Integration with external panchang calculation APIs"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
